@@ -31,7 +31,7 @@ const Dashboard = () => {
     },
     header: {
       backgroundColor: '#0F0E18',
-      padding: '10px 0',
+      padding: '20px 0',
       display: 'flex',
       justifyContent: 'center',
       boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',

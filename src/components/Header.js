@@ -12,7 +12,7 @@ const Header = () => {
 const styles = {
   header: {
     backgroundColor: '#0F0E18',
-    padding: '10px 0',
+    padding: '20px 0',
     display: 'flex',
     justifyContent: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',

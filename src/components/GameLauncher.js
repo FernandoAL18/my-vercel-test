@@ -39,27 +39,27 @@ const styles = {
   },
   header: {
     backgroundColor: '#0F0E18',
-    padding: '20px 0',
+    padding: '5vh 0', // Ajuste en altura relativa al viewport
     display: 'flex',
     justifyContent: 'center',
     boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
     width: '100%',
   },
   logo: {
-    width: '100px',
+    width: '20vw', // Ajuste en anchura relativa al viewport
     height: 'auto',
   },
   content: {
-    marginTop: '50px',
+    marginTop: '2vh', // Añadir espacio entre el header y el contenido
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
   },
   launcher: {
-    width: '80%',
-    height: 'calc(100vh - 200px)',
-    borderRadius: '5px 5px 0 0',
+    width: '90vw', // Anchura relativa a la pantalla del usuario
+    height: '70vh', // Altura relativa a la pantalla del usuario
+    borderRadius: '5px 5px 0 0', 
     overflow: 'hidden',
     backgroundColor: '#000',
     marginBottom: '0px',
@@ -70,19 +70,20 @@ const styles = {
     border: 'none',
   },
   gameFooter: {
-    width: '80%',
-    height: '50px',
+    width: '90vw', // Hacer coincidir el ancho con el launcher
+    height: '7vh', // Ajuste en altura relativa al viewport
     backgroundColor: '#0F0E18',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '0 0 5px 5px',
-    marginTop: '0px',
+    marginTop: '0px', 
   },
   footerLogo: {
-    width: '50px',
-    opacity: '0.2',
+    width: '10vw', // Ajuste en anchura relativa al viewport
+    opacity: '0.2', // 90% de transparencia
   },
 };
+
 
 export default GameLauncher;
