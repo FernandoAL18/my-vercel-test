@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import slotsIcon from '../assets/icons/slots.svg';
 import liveCasinoIcon from '../assets/icons/livecasino.svg';
-import logo from '../assets/icons/logo.png';
 import wantedImage from '../assets/icons/wanteddeadorawild.png'; 
 import sweetBonanzaImage from '../assets/icons/sweetbonanza1000.png';
 import gatesOfOlympusImage from '../assets/icons/gatesofolympus.png'; 
@@ -28,17 +27,6 @@ const Dashboard = () => {
       backgroundColor: '#171723',
       color: '#ffffff',
       minHeight: '100vh',
-    },
-    header: {
-      backgroundColor: '#0F0E18',
-      padding: '20px 0',
-      display: 'flex',
-      justifyContent: 'center',
-      boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-    },
-    logo: {
-      width: '100px',
-      height: 'auto',
     },
     mainContainer: {
       display: 'flex',
@@ -67,7 +55,7 @@ const Dashboard = () => {
       marginBottom: '10px',
     },
     icon: {
-      width: '30px',
+      width: '20px',
       height: 'auto',
       marginRight: '10px',
     },
@@ -79,7 +67,7 @@ const Dashboard = () => {
     },
     slotsContainer: {
       display: 'flex',
-      gap: '10px',
+      gap: '3px',
       overflowX: 'auto',
       whiteSpace: 'nowrap',
       paddingBottom: '10px',
@@ -99,9 +87,9 @@ const Dashboard = () => {
       cursor: 'pointer',
     },
     slotImage: {
-      width: '100%',
+      width: '110%',
       height: 'auto',
-      maxWidth: '120px',
+      maxWidth: '150px',
       borderRadius: '10px',
       boxShadow: '0px 4px 15px rgba(128, 0, 128, 0.5)',
       transition: 'transform 0.3s ease',
@@ -119,9 +107,6 @@ const Dashboard = () => {
 
   return (
     <div style={styles.dashboard}>
-      <header style={styles.header}>
-        <img src={logo} alt="Logo" style={styles.logo} />
-      </header>
       <div style={styles.mainContainer}>
         <div style={styles.mainContent}>
           <div style={styles.popularSlotsSection}>

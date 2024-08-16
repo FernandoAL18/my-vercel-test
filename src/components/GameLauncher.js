@@ -8,9 +8,6 @@ const GameLauncher = ({ gameUrl, gameTitle }) => {
 
   return (
     <div style={styles.container}>
-      <header style={styles.header}>
-        <img src={logo} alt="Logo" style={styles.logo} />
-      </header>
       <div style={styles.content}>
         <div style={styles.launcher}>
           <iframe
@@ -36,18 +33,6 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     minHeight: '100vh',
-  },
-  header: {
-    backgroundColor: '#0F0E18',
-    padding: '5vh 0', // Ajuste en altura relativa al viewport
-    display: 'flex',
-    justifyContent: 'center',
-    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-    width: '100%',
-  },
-  logo: {
-    width: '20vw', // Ajuste en anchura relativa al viewport
-    height: 'auto',
   },
   content: {
     marginTop: '2vh', // Añadir espacio entre el header y el contenido
@@ -80,7 +65,7 @@ const styles = {
     marginTop: '0px', 
   },
   footerLogo: {
-    width: '10vw', // Ajuste en anchura relativa al viewport
+    width: '60px', // Ajuste en anchura relativa al viewport
     opacity: '0.2', // 90% de transparencia
   },
 };
