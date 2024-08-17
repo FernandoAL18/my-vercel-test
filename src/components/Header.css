@@ -1,0 +1,21 @@
+/* Header.css */
+
+.header {
+    background-color: #0F0E18;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: fixed; /* Hace que el header sea estático */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
+  }
+  

@@ -1,26 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/icons/logo.png';
+import './Header.css';  // Importa el archivo CSS
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
-    <header style={styles.header}>
-      <img src={logo} alt="Logo" style={styles.logo} />
+    <header className="header">
+      <img 
+        src={logo} 
+        alt="Logo" 
+        className="logo" 
+        onClick={() => navigate('/dashboard')}  // Redirigir al dashboard al hacer clic en el logo
+      />
     </header>
   );
-};
-
-const styles = {
-  header: {
-    backgroundColor: '#0F0E18',
-    padding: '20px 0',
-    display: 'flex',
-    justifyContent: 'center',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  },
-  logo: {
-    width: '120px',
-    height: 'auto',
-  },
 };
 
 export default Header;
