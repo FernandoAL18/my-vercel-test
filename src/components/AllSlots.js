@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import './AllSlots.css'; // Asegúrate de tener este archivo CSS para los estilos
+import React, { useState, useEffect } from 'react';
+import './AllSlots.css';
 
-const AllSlots = ({ games }) => {
+const AllSlots = ({ games = [] }) => {  // Establecemos un valor por defecto
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredGames, setFilteredGames] = useState(games);
   const [sortOrder, setSortOrder] = useState('A-Z');
+
+  useEffect(() => {
+    setFilteredGames(games);
+  }, [games]);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -22,9 +26,9 @@ const AllSlots = ({ games }) => {
     } else if (order === 'Z-A') {
       sortedGames.sort((a, b) => b.title.localeCompare(a.title));
     } else if (order === 'Most Popular') {
-      sortedGames.sort((a, b) => b.popularity - a.popularity);
+      sortedGames.sort((a, b) => b.popularity - a.popularity); 
     } else if (order === 'Featured') {
-      sortedGames = games.filter((game) => game.featured);
+      sortedGames = games.filter((game) => game.featured); 
     }
     setFilteredGames(sortedGames);
   };

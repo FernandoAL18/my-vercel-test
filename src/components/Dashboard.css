@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #171723;
+    background-color: #000000;
     color: #ffffff;
     width: 100%;
     overflow-x: hidden; /* Evita el desplazamiento horizontal del fondo */
@@ -17,13 +17,15 @@
 .main-content {
     width: 100%;
     padding: 20px;
-    background-color: #171723;
+    background-color: #000000;
     overflow-y: auto;
     overflow-x: hidden; /* Asegura que el contenido principal no se desplace horizontalmente */
 }
 
 .popular-slots-section,
-.live-casino-section {
+.live-casino-section,
+.new-releases-section,
+.game-shows-section {
     width: 100%;
     margin-bottom: 40px;
 }
@@ -83,7 +85,7 @@
     right: 0;
     width: 50px;
     height: 100%;
-    background-image: linear-gradient(to left, rgba(21, 20, 36, 1), rgba(21, 20, 36, 0));
+    background-image: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));
     pointer-events: none;
 }
 
@@ -95,5 +97,15 @@
 
     .slot-image {
         max-width: 120px; /* Ajuste para pantallas más pequeñas */
+    }
+
+    .slots-container {
+        display: flex;
+        gap: 10px; /* Reduce el espacio entre tarjetas en pantallas pequeñas */
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
     }
 }
