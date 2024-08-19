@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 import './Layout.css';
@@ -11,11 +11,25 @@ import userIcon from '../assets/icons/user.svg';
 import menuIcon from '../assets/icons/menu.svg';
 
 const Layout = () => {
-  const isMobile = window.innerWidth <= 768;
   const navigate = useNavigate();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isWalletOpen, setIsWalletOpen] = useState(false); // State to control wallet modal visibility
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth <= 768) {
+        setIsSidebarCollapsed(true); // Collapse the sidebar on mobile
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
@@ -30,45 +44,46 @@ const Layout = () => {
     setIsUserMenuOpen(false); // Close the menu after selection
   };
 
-  const toggleWalletModal = () => {
-    setIsWalletModalOpen(!isWalletModalOpen);
+  const openWallet = () => {
+    setIsWalletOpen(true); // Open the wallet modal
+  };
+
+  const closeWallet = () => {
+    setIsWalletOpen(false); // Close the wallet modal
   };
 
   return (
     <div className={`layout-container ${isSidebarCollapsed ? 'sidebar-collapsed' : 'sidebar-expanded'}`}>
-      <aside className={`sidebar ${isSidebarCollapsed ? 'collapsed' : 'expanded'}`}>
-        <button className="toggle-button" onClick={toggleSidebar}>
-          <img src={menuIcon} alt="Toggle Sidebar" className="menu-icon" />
-        </button>
-        <ul className="sidebar-menu">
-          <li onClick={() => navigate('/dashboard')}>
-            <DashboardIcon className="sidebar-icon" />
-            {!isSidebarCollapsed && <span>Dashboard</span>}
-          </li>
-          <li onClick={() => navigate('/all-slots')}>
-            <GamesIcon className="sidebar-icon" />
-            {!isSidebarCollapsed && <span>All Slots</span>}
-          </li>
-          <li onClick={() => navigate('/settings')}>
-            <SettingsIcon className="sidebar-icon" />
-            {!isSidebarCollapsed && <span>Settings</span>}
-          </li>
-        </ul>
-      </aside>
-      <div className={`main-content ${isSidebarCollapsed ? 'sidebar-collapsed' : 'sidebar-expanded'}`}>
-        <header className={`header ${isSidebarCollapsed ? 'header-collapsed' : 'header-expanded'}`}>
+      {!isMobile && (
+        <aside className={`sidebar ${isSidebarCollapsed ? 'collapsed' : 'expanded'}`}>
+          <button className="toggle-button" onClick={toggleSidebar}>
+            <img src={menuIcon} alt="Toggle Sidebar" className="menu-icon" />
+          </button>
+          <ul className="sidebar-menu">
+            <li onClick={() => navigate('/dashboard')}>
+              <DashboardIcon className="sidebar-icon" />
+              {!isSidebarCollapsed && <span>Dashboard</span>}
+            </li>
+            <li onClick={() => navigate('/all-slots')}>
+              <GamesIcon className="sidebar-icon" />
+              {!isSidebarCollapsed && <span>All Slots</span>}
+            </li>
+            <li onClick={() => navigate('/settings')}>
+              <SettingsIcon className="sidebar-icon" />
+              {!isSidebarCollapsed && <span>Settings</span>}
+            </li>
+          </ul>
+        </aside>
+      )}
+      <div className={`main-content ${isSidebarCollapsed || isMobile ? 'sidebar-collapsed' : 'sidebar-expanded'}`}>
+        <header className={`header ${isSidebarCollapsed || isMobile ? 'header-collapsed' : 'header-expanded'}`}>
           <img 
             src={require('../assets/icons/logo.png')} 
             alt="Logo" 
             className="logo" 
             onClick={() => navigate('/dashboard')}
           />
-          
-          {/* Wallet Button */}
-          <button className="wallet-button" onClick={toggleWalletModal}>
-            Wallet
-          </button>
-
+          <button className="wallet-button" onClick={openWallet}>Wallet</button>
           <div className="user-menu-wrapper">
             <img 
               src={userIcon} 
@@ -99,26 +114,22 @@ const Layout = () => {
         </div>
       </div>
       {isMobile && <MobileMenu className="menu" />}
-
-      {/* Wallet Modal */}
-      {isWalletModalOpen && (
+      {isWalletOpen && (
         <div className="wallet-modal">
-          <div className="wallet-modal-content">
-            <button className="wallet-modal-close" onClick={toggleWalletModal}>×</button>
-            <h2>Estimated Balance</h2>
-            <div className="wallet-balance">0.00 USD</div>
-            <div className="crypto-container">
-              {/* Crypto balances should be dynamically populated here */}
-              <div className="crypto-item">Bitcoin: 0.00 BTC</div>
-              <div className="crypto-item">Ethereum: 0.00 ETH</div>
-              {/* Add more cryptos as needed */}
-            </div>
-            <div className="wallet-buttons">
-              <button className="wallet-action-button">Deposit</button>
-              <button className="wallet-action-button">Withdraw</button>
-              <button className="wallet-action-button">Buy Crypto</button>
-              <button className="wallet-action-button">Tip</button>
-            </div>
+          <button className="close-button" onClick={closeWallet}>X</button>
+          <div className="balance-title">Estimated Balance</div>
+          <div className="balance-amount">$0.00</div>
+          <div className="crypto-container">
+            {/* Placeholder for crypto items */}
+            <div className="crypto-item">BTC</div>
+            <div className="crypto-item">ETH</div>
+            <div className="crypto-item">USDT</div>
+          </div>
+          <div className="wallet-buttons">
+            <button>Deposit</button>
+            <button>Withdraw</button>
+            <button>Buy Crypto</button>
+            <button>Tip</button>
           </div>
         </div>
       )}
