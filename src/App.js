@@ -5,27 +5,27 @@ import AllSlots from './components/AllSlots';
 import Dashboard from './components/Dashboard';
 import GameLauncher from './components/GameLauncher';
 
-// Importa las imágenes necesarias
-const sweetBonanzaImage = require('./assets/icons/sweetbonanza1000.png');
-const gatesOfOlympusImage = require('./assets/icons/gatesofolympus.png');
-const wantedDeadOrWildImage = require('./assets/icons/wanteddeadorawild.png');
-const leBanditImage = require('./assets/icons/lebandit.png');
-const zeusVsHadesImage = require('./assets/icons/zeusvshades.png');
-const firePortalsImage = require('./assets/icons/fireportals.png');
-const ripCityImage = require('./assets/icons/ripcity.png');
-const sugarRushImage = require('./assets/icons/sugarrush.png');
-const fruitPartyImage = require('./assets/icons/fruitparty.png');
-const fistOfDestructionImage = require('./assets/icons/fistofdestruction.png');
-const theDogHouseImage = require('./assets/icons/thedoghouse.png');
-const bigBassSplashImage = require('./assets/icons/bigbasssplash.png');
-const donnyDoughImage = require('./assets/icons/donnydough.png');
-const sixSixSixImage = require('./assets/icons/sixsixsix.png');
-const dragonsDomainImage = require('./assets/icons/dragonsdomain.png');
-const taiTheToadImage = require('./assets/icons/taithetoad.png');
-const moneyStacksImage = require('./assets/icons/moneystacks.png');
-const oldGunImage = require('./assets/icons/oldgun.png');
-const bowOfArtemisImage = require('./assets/icons/bowofartemis.png');
-const slayersIncImage = require('./assets/icons/slayersinc.png');
+// Importa las imágenes necesarias desde la nueva ruta
+const sweetBonanzaImage = require('./assets/slots/sweetbonanza1000.png');
+const gatesOfOlympusImage = require('./assets/slots/gatesofolympus.png');
+const wantedDeadOrWildImage = require('./assets/slots/wanteddeadorawild.png');
+const leBanditImage = require('./assets/slots/lebandit.png');
+const zeusVsHadesImage = require('./assets/slots/zeusvshades.png');
+const firePortalsImage = require('./assets/slots/fireportals.png');
+const ripCityImage = require('./assets/slots/ripcity.png');
+const sugarRushImage = require('./assets/slots/sugarrush.png');
+const fruitPartyImage = require('./assets/slots/fruitparty.png');
+const fistOfDestructionImage = require('./assets/slots/fistofdestruction.png');
+const theDogHouseImage = require('./assets/slots/thedoghouse.png');
+const bigBassSplashImage = require('./assets/slots/bigbasssplash.png');
+const donnyDoughImage = require('./assets/slots/donnydough.png');
+const sixSixSixImage = require('./assets/slots/sixsixsix.png');
+const dragonsDomainImage = require('./assets/slots/dragonsdomain.png');
+const taiTheToadImage = require('./assets/slots/taithetoad.png');
+const moneyStacksImage = require('./assets/slots/moneystacks.png');
+const oldGunImage = require('./assets/slots/oldgun.png');
+const bowOfArtemisImage = require('./assets/slots/bowofartemis.png');
+const slayersIncImage = require('./assets/slots/slayersinc.png');
 
 // Importa las imágenes de Game Shows
 const crazyTimeImage = require('./assets/live-casino/crazytime.png');

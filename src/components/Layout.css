@@ -109,7 +109,7 @@
 }
 
 .sidebar-expanded .main-content {
-    margin-left: 200px; /* Ajuste para cuando el sidebar está expandido */
+    margin-left: 100px; /* Ajuste para cuando el sidebar está expandido */
 }
 
 /* Header */
@@ -223,7 +223,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .sidebar {
+    .sidebar.collapsed {
         display: none;
     }
 
@@ -351,4 +351,20 @@
     .wallet-modal .wallet-buttons {
         grid-template-columns: 1fr;
     }
+}
+
+/* Back Button in Deposit Screen */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.back-button img {
+    width: 32px;
+    height: 32px;
 }

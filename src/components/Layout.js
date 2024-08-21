@@ -9,13 +9,15 @@ import { ReactComponent as GamesIcon } from '../assets/icons/games.svg';
 import { ReactComponent as SettingsIcon } from '../assets/icons/settings.svg';
 import userIcon from '../assets/icons/user.svg';
 import menuIcon from '../assets/icons/menu.svg';
+import backArrowIcon from '../assets/icons/back-arrow.svg';
 
 const Layout = () => {
   const navigate = useNavigate();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [isWalletOpen, setIsWalletOpen] = useState(false); // State to control wallet modal visibility
+  const [isWalletOpen, setIsWalletOpen] = useState(false);
+  const [walletScreen, setWalletScreen] = useState('main'); // Controls which screen is shown in the wallet
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,15 +43,24 @@ const Layout = () => {
 
   const handleMenuItemClick = (path) => {
     navigate(path);
-    setIsUserMenuOpen(false); // Close the menu after selection
+    setIsUserMenuOpen(false);
   };
 
   const openWallet = () => {
-    setIsWalletOpen(true); // Open the wallet modal
+    setIsWalletOpen(true);
+    setWalletScreen('main'); // Reset to main screen when wallet opens
   };
 
   const closeWallet = () => {
-    setIsWalletOpen(false); // Close the wallet modal
+    setIsWalletOpen(false);
+  };
+
+  const goToDeposit = () => {
+    setWalletScreen('deposit');
+  };
+
+  const goToMain = () => {
+    setWalletScreen('main');
   };
 
   return (
@@ -116,21 +127,62 @@ const Layout = () => {
       {isMobile && <MobileMenu className="menu" />}
       {isWalletOpen && (
         <div className="wallet-modal">
-          <button className="close-button" onClick={closeWallet}>X</button>
-          <div className="balance-title">Estimated Balance</div>
-          <div className="balance-amount">$0.00</div>
-          <div className="crypto-container">
-            {/* Placeholder for crypto items */}
-            <div className="crypto-item">BTC</div>
-            <div className="crypto-item">ETH</div>
-            <div className="crypto-item">USDT</div>
-          </div>
-          <div className="wallet-buttons">
-            <button>Deposit</button>
-            <button>Withdraw</button>
-            <button>Buy Crypto</button>
-            <button>Tip</button>
-          </div>
+          {walletScreen === 'main' && (
+            <>
+              <button className="close-button" onClick={closeWallet}>X</button>
+              <div className="balance-title">Estimated Balance</div>
+              <div className="balance-amount">$0.00</div>
+              <div className="crypto-container">
+                <div className="crypto-item">BTC</div>
+                <div className="crypto-item">ETH</div>
+                <div className="crypto-item">USDT</div>
+              </div>
+              <div className="wallet-buttons">
+                <button onClick={goToDeposit}>Deposit</button>
+                <button>Withdraw</button>
+                <button>Buy Crypto</button>
+                <button>Tip</button>
+              </div>
+            </>
+          )}
+          {walletScreen === 'deposit' && (
+            <>
+              <button className="back-button" onClick={goToMain}>
+                <img src={backArrowIcon} alt="Back" className="back-icon" />
+              </button>
+              <div className="deposit-header">Depositar</div>
+              <div className="crypto-selection">
+                <div className="crypto-item">
+                  <div className="crypto-info">
+                    <div className="crypto-name">USDT</div>
+                    <div className="crypto-fullname">USD Tether</div>
+                  </div>
+                </div>
+                <div className="network-selection">
+                  <span className="network-label">Red</span>
+                  <span className="network-name">ETH</span>
+                </div>
+              </div>
+              <div className="address-container">
+                <span className="address-label">Tu dirección de depósito con USDT</span>
+                <div className="address-wrapper">
+                  <input
+                    type="text"
+                    readOnly
+                    value="0x71e421c5300a70ff3189fdc0c512134b250a979d"
+                    className="address-input"
+                  />
+                  <button className="copy-button">Copy</button>
+                </div>
+                <div className="qr-code-container">
+                  <img src="[QR Code Image]" alt="QR Code" />
+                </div>
+              </div>
+              <div className="deposit-note">
+                Envía únicamente USDT a esta dirección, se necesitan 2 confirmaciones.
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
