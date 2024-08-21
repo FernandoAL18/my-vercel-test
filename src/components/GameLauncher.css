@@ -53,6 +53,11 @@
       width: 70vw;  /* Ajuste el ancho para pantallas grandes */
       height: 75vh; /* Ajustar la altura a 75vh en pantallas grandes */
     }
+
+    .game-launcher-container {
+      width: 100%;
+      margin-left: 0;
+  }
   
     .gameFooter {
       width: 70vw;  /* Hacer coincidir el ancho con el launcher */
