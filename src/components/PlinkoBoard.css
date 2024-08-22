@@ -1,0 +1,105 @@
+.plinko-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .plinko-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .plinko-peg {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 5px;
+  }
+  
+  .plinko-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .plinko-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .plinko-peg {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 5px;
+  }
+  
+  .plinko-ball {
+    width: 20px;
+    height: 20px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    animation: drop 2s ease-in forwards;
+  }
+  
+  @keyframes drop {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  .plinko-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    height: 400px;
+  }
+  
+  .plinko-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .plinko-peg {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  
+  .plinko-ball {
+    width: 20px;
+    height: 20px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transition: top 1s ease-in;
+  }
+  
+  .plinko-board .plinko-ball {
+    animation: dropBall 2s ease-in-out forwards;
+  }
+  
+  @keyframes dropBall {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  

@@ -37,7 +37,9 @@ const balloonRaceImage = require('../assets/live-casino/balloonrace.png');
 // Importa las imágenes de promociones
 const promoImage = require('../assets/slots/Artboard.png');
 const promoImage2 = require('../assets/slots/Artboard2.png');
-const promoImage3 = require('../assets/slots/Artboard3.png');
+const promoImage3 = require('../assets/slots/Artboard3.png'); 
+const promoImage4 = require('../assets/slots/Artboard4.png');
+
 
 const originalsIcon = require('../assets/icons/originals.svg');
 const liveCasinoIcon = require('../assets/icons/livecasino.svg');
@@ -88,6 +90,8 @@ const Dashboard = () => {
     { id: 1, title: 'Artboard Promo', image: promoImage },
     { id: 2, title: 'Artboard Promo 2', image: promoImage2 },
     { id: 3, title: 'Artboard Promo 3', image: promoImage3 },
+    { id: 4, title: 'Artboard Promo 4', image: promoImage4 },
+
   ];
 
   const renderGameCards = (games) => {
@@ -129,7 +133,6 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-
           <div className="live-casino-section">
             <div className="title-container">
               <img src={liveCasinoIcon} alt="Live Casino" className="icon" />
@@ -145,7 +148,7 @@ const Dashboard = () => {
           <div className="new-releases-section">
             <div className="title-container">
               <img src={newReleasesIcon} alt="New Releases" className="icon" />
-              
+
             <span className="sub-heading">New Releases</span>
             </div>
             <div className="slots-wrapper">

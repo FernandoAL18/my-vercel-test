@@ -136,11 +136,11 @@
 
     .main-container {
         width: 100%;
-        margin-left: 0;
+        margin-left: -40px;
     }
 
     .promo-card {
-        width: 120px; /* Ajuste para pantallas más pequeñas */
+        width: 160px; /* Ajuste para pantallas más pequeñas */
     }
 
     .slot-image {
@@ -148,7 +148,7 @@
     }
 
     .promo-image {
-        max-width: 270px; /* Ajuste para pantallas más pequeñas */
+        max-width: 310px; /* Ajuste para pantallas más pequeñas */
     }
 
     .slots-container {

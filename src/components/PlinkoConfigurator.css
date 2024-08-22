@@ -1,0 +1,58 @@
+.plinko-configurator {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1c1c1e;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .plinko-configurator label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .plinko-configurator select,
+  .plinko-configurator input {
+    padding: 5px;
+    background-color: #2c2c2e;
+    color: white;
+    border: 1px solid #3a3a3c;
+    border-radius: 5px;
+  }
+  
+  .plinko-configurator button {
+    padding: 10px;
+    background-color: #32d74b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .plinko-configurator button:hover {
+    background-color: #28a745;
+  }
+  
+  .plinko-configurator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .plinko-configurator div {
+    margin-right: 20px;
+  }
+  
+  .plinko-configurator label {
+    margin-right: 10px;
+  }
+  
+  .plinko-configurator input,
+  .plinko-configurator select {
+    padding: 5px;
+    font-size: 16px;
+  }
+  

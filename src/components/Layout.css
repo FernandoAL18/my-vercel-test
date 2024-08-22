@@ -102,7 +102,7 @@
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-left: 60px; /* Default margin when sidebar is collapsed */
+    margin-left: 30px; /* Default margin when sidebar is collapsed */
     padding: 20px;
     transition: margin-left 0.3s ease, padding-left 0.3s ease;
     overflow-x: hidden; /* Evita el desplazamiento horizontal */

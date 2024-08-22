@@ -4,38 +4,9 @@ import Layout from './components/Layout';
 import AllSlots from './components/AllSlots';
 import Dashboard from './components/Dashboard';
 import GameLauncher from './components/GameLauncher';
+import Plinko from './components/Plinko'; // Importa correctamente Plinko
 
-// Importa las imágenes necesarias desde la nueva ruta
-const sweetBonanzaImage = require('./assets/slots/sweetbonanza1000.png');
-const gatesOfOlympusImage = require('./assets/slots/gatesofolympus.png');
-const wantedDeadOrWildImage = require('./assets/slots/wanteddeadorawild.png');
-const leBanditImage = require('./assets/slots/lebandit.png');
-const zeusVsHadesImage = require('./assets/slots/zeusvshades.png');
-const firePortalsImage = require('./assets/slots/fireportals.png');
-const ripCityImage = require('./assets/slots/ripcity.png');
-const sugarRushImage = require('./assets/slots/sugarrush.png');
-const fruitPartyImage = require('./assets/slots/fruitparty.png');
-const fistOfDestructionImage = require('./assets/slots/fistofdestruction.png');
-const theDogHouseImage = require('./assets/slots/thedoghouse.png');
-const bigBassSplashImage = require('./assets/slots/bigbasssplash.png');
-const donnyDoughImage = require('./assets/slots/donnydough.png');
-const sixSixSixImage = require('./assets/slots/sixsixsix.png');
-const dragonsDomainImage = require('./assets/slots/dragonsdomain.png');
-const taiTheToadImage = require('./assets/slots/taithetoad.png');
-const moneyStacksImage = require('./assets/slots/moneystacks.png');
-const oldGunImage = require('./assets/slots/oldgun.png');
-const bowOfArtemisImage = require('./assets/slots/bowofartemis.png');
-const slayersIncImage = require('./assets/slots/slayersinc.png');
 
-// Importa las imágenes de Game Shows
-const crazyTimeImage = require('./assets/live-casino/crazytime.png');
-const lightningStormImage = require('./assets/live-casino/lightningstorm.png');
-const lightningRouletteImage = require('./assets/live-casino/lightningroulette.png');
-const stockMarketImage = require('./assets/live-casino/stockmarket.png');
-const monopolyImage = require('./assets/live-casino/monopoly.png');
-const xxxtremeLightningRouletteImage = require('./assets/live-casino/xxxtremelightningroulette.png');
-const redDoorRouletteImage = require('./assets/live-casino/reddoorroulette.png');
-const balloonRaceImage = require('./assets/live-casino/balloonrace.png');
 
 function App() {
   return (
@@ -45,7 +16,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/all-slots" element={<AllSlots />} />
-
+          <Route path="/plinko" element={<Plinko />} />
           {/* Rutas para los Game Shows */}
           <Route path="/game/crazy-time" element={
             <GameLauncher 
@@ -119,9 +90,6 @@ function App() {
               gameTitle="Balloon Race" 
             />
           } />
-
-          {/* Aquí irían los otros juegos que ya estaban en el código */}
-
           <Route path="/game/sweet-bonanza" element={
             <GameLauncher 
               gameUrl={{
